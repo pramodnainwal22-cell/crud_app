@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'pramodnainwal22@gmail.com'
-EMAIL_HOST_PASSWORD = 'htmi meox bqul mumv'
+EMAIL_HOST_PASSWORD = 'xcaf omiq sxpi fzhf'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 

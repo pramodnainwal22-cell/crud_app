@@ -1,85 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends 'home.html' %}
 
-<title>Contact</title>
+{% block content %}
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="bg-light p-5 rounded" style="width:600px;">
+    
+    <h2 class="text-center mb-3">Get in Touch</h2>
+    <p class="text-center">We'd love to hear from you.</p>
 
-</head>
+    <form method="POST">
+        {% csrf_token %}
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-	<div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#page-top">CRUD APP</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            Menu
-        <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ms-auto">
-               <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-               <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-               <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
-               <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-               <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-            </ul>    
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" name="name" class="form-control mb-3" placeholder="Your Name">
+            </div>
+
+            <div class="col-md-6">
+                <input type="email" name="email" class="form-control mb-3" placeholder="Your Email">
+            </div>
         </div>
-    </div>
-</nav>
-<div class="container mt-5">
 
-<center>
-<h2>Get in Touch</h2>
-<p>We'd love to hear from you.</p>
-</center>
+        <input type="text" name="phone" class="form-control mb-3" placeholder="Phone Number">
 
-<form method="POST">
-{% csrf_token %}
+        <textarea name="message" class="form-control mb-3" placeholder="Your Message"></textarea>
 
-<div class="row">
-
-<div class="col-md-6">
-<label>Your Name</label>
-<input type="text" name="name" class="form-control">
-</div>
-
-<div class="col-md-6">
-<label>Your Email</label>
-<input type="email" name="email" class="form-control">
-</div>
+        <button class="btn btn-primary w-100">Send Message</button>
+    </form>
 
 </div>
 
-<br>
-
-<div class="row">
-
-<div class="col-md-12">
-<label>Phone Number</label>
-<input type="text" name="phone" class="form-control">
-</div>
-
-</div>
-
-<br>
-
-<div class="row">
-
-<div class="col-md-12">
-<label>Your Message</label>
-<textarea name="message" class="form-control"></textarea>
-</div>
-
-</div>
-
-<br>
-
-<button class="btn btn-primary">Send Message</button>
-
-</form>
-
-</div>
-
-</body>
-</html>
+{% endblock %}
