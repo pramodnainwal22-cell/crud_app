@@ -1,21 +1,49 @@
-# Django CRUD Application
+# 🎓 CRUD Mini Project (Django)
 
-A simple web application demonstrating CRUD (Create, Read, Update, Delete) operations, built using Python and the Django framework.
+A full-stack CRUD web application built using Django with authentication and modern UI.
 
-## Features
-* **Create:** Add new records to the database.
-* **Read:** View a list of existing records.
-* **Update:** Edit and update details of existing records.
-* **Delete:** Remove records from the database.
+---
 
-## Technologies Used
-* **Backend:** Python, Django
-* **Database:** SQLite3 (Django's default)
-* **Frontend:** HTML, CSS
+## 🚀 Features
 
-## How to Run Locally
-1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Run the following command to start the development server:
-   ```bash
-   python manage.py runserver
+- 🔐 User Authentication (Login / Logout)
+- ➕ Add Student
+- 📋 View Student Records
+- ✏️ Update Student Details
+- 🗑️ Delete Student
+- 🔍 Search Functionality (Name & Email)
+- 🔄 Reset Search
+- 🎨 Modern UI with Bootstrap & Icons
+
+---
+
+## 🛠️ Tech Stack
+
+- Backend: Django (Python)
+- Frontend: HTML, CSS, Bootstrap
+- Database: SQLite
+
+---
+
+## 🎥 Demo
+
+- User can login securely
+- Add, update and delete student records
+- Search functionality available
+- Clean UI with Bootstrap
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/pramodnainwal22-cell/crud_app.git
+cd crud_app
+python manage.py runserver
+
+This project helped me improve my understanding of Django CRUD operations and frontend-backend integration.
+
+## 👤 Author
+Pramod Nainwal
+
+---
+
+## ⭐ Give a star if you like it!
