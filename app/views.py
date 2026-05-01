@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.db.models import Q
 from .models import Student
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -10,10 +11,16 @@ def home(request):
     return render(request,'home.html')
 
 def index(request):
-    data=Student.objects.all()
-    print(data)
-    context={"data":data}
-    return render(request,"index.html",context)
+    query = request.GET.get('q')   # search input
+
+    if query:
+        data = Student.objects.filter(
+            Q(name__icontains=query) | Q(email__icontains=query)
+        )
+    else:
+        data = Student.objects.all()
+
+    return render(request, 'index.html', {'data': data})
 
 def contact(request):
     return render(request,'contact.html')
@@ -28,7 +35,7 @@ def insertData(request):
         query=Student(name=name,email=email,age=age,gender=gender)
         query.save()
         messages.info(request,"Data Inserted Successfully")
-        return redirect("/")
+        return redirect("/login/")
 
     return render(request,"index.html")
 
@@ -46,7 +53,7 @@ def updateData(request,id):
         edit.age=age
         edit.save()
         messages.warning(request,"Data Updated Successfully")
-        return redirect("/")
+        return redirect("/login/")
 
     d=Student.objects.get(id=id) 
     context={"d":d}
@@ -56,7 +63,7 @@ def deleteData(request,id):
     d=Student.objects.get(id=id) 
     d.delete()
     messages.error(request,"Data deleted Successfully")
-    return redirect("/")
+    return redirect("/login/")
     
 def about(request):
     return render(request,"about.html")
@@ -95,7 +102,7 @@ def user_login(request):
 
 def user_logout(request):
     logout(request)
-    return redirect('/')
+    return redirect('/login/')
 
 def contact(request):
 
