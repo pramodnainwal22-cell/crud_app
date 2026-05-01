@@ -35,7 +35,7 @@ A full-stack CRUD web application built using Django with authentication and mod
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/pramodnainwal22-cell/crud_app.git
+git clone https://github.com/pramodnainwal22-cell/crud_app
 cd crud_app
 python manage.py runserver
 
