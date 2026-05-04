@@ -2,30 +2,31 @@
 
 {% block content %}
 
-<div class="bg-light p-5 rounded" style="width:600px;height: 350px;">
-    
-    <h2 class="text-center mb-3">Get in Touch</h2>
-    <p class="text-center">We'd love to hear from you.</p>
+<div class="container d-flex justify-content-center">
+    <div class="bg-light p-4 rounded w-100" style="max-width:600px;">    
+        <h2 class="text-center mb-3">Get in Touch</h2>
+        <p class="text-center">We'd love to hear from you.</p>
 
-    <form method="POST">
-        {% csrf_token %}
+        <form method="POST">
+            {% csrf_token %}
 
-        <div class="row">
-            <div class="col-md-6">
-                <input type="text" name="name" class="form-control mb-3" placeholder="Your Name">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" name="name" class="form-control mb-3" placeholder="Your Name">
+                </div>
+
+                <div class="col-md-6">
+                    <input type="email" name="email" class="form-control mb-3" placeholder="Your Email">
+                </div>
             </div>
 
-            <div class="col-md-6">
-                <input type="email" name="email" class="form-control mb-3" placeholder="Your Email">
-            </div>
-        </div>
+            <input type="text" name="phone" class="form-control mb-3" placeholder="Phone Number">
 
-        <input type="text" name="phone" class="form-control mb-3" placeholder="Phone Number">
+            <textarea name="message" class="form-control mb-3" placeholder="Your Message"></textarea>
 
-        <textarea name="message" class="form-control mb-3" placeholder="Your Message"></textarea>
-
-        <button class="btn btn-primary w-100">Send Message</button>
-    </form>
+            <button class="btn btn-primary w-100">Send Message</button>
+        </form>
+    </div>
 
 </div>
 
